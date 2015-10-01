@@ -4,8 +4,7 @@ pytest-session_to_file
 pytest-session_to_file is a py.test plugin that save failure or test session information to a file pass that can be
 invoked as at command line when launching py.test run. It put in a file exactly what pytest return to stdout.
 
-Installation
-____________
+**Installation**
 
 
 Install it with pip as follow :
@@ -13,8 +12,8 @@ Install it with pip as follow :
     pip install pytest-pytest_session_to_file
 
 
-Usage
-_____
+**Usage**
+
 
 Once the plugin is installed edit your `conftest.py` and insert in the top of the file :
 
@@ -32,20 +31,27 @@ At the end of the test execution you should obtain a text file with the content 
 provided that look like this :
 
 ============== test session starts ====================
+
 ...
 
 ============== 2 passed in 34.70 seconds ==============
 
 
-TODO: Write test
+**TODO:** Write test
 
 Inspire by _pytest.pastebin
+
 Ref: https://github.com/pytest-dev/pytest/blob/master/_pytest/pastebin.py
 
 
 
-Platforms : All
-Version : 0.1.0
-Date : 30 sept. 2015 11:25
+**Platforms:** All
+
+**Version:** 0.1.0
+
+**Date:** 30 sept. 2015 11:25
+
+**License:** LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
+
 Copyright (C) 2015 Richard Vézina <ml.richard.vezinar@gmail.com>
-License: LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
+
