@@ -15,7 +15,7 @@ setup(
     author='Richard Vézina',
     author_email='ml.richard.vezina@gmail.com',
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
-    packages=['pytest_session_to_file'],
+    packages=[],
     description='pytest-session_to_file is a py.test plugin for capturing and saving to file the stdout of py.test.',
     long_description=read('README.md'),
     url="https://pypi.python.org/pypi/pytest-session_to_file",
