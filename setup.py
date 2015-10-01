@@ -20,7 +20,7 @@ setup(
     long_description=read('README.md'),
     url="https://pypi.python.org/pypi/pytest-session_to_file",
     # the following makes a plugin available to py.test
-    entry_points={'pytest11': ['pytest_session_to_file = pytest_session_to_file.pytest_session_to_file']},
+    entry_points={'pytest11': ['pytest-session_to_file = pytest_session_to_file']},
     keywords='py.test pytest plugin plugins',
     install_requires=['pytest'],
     classifiers=[
