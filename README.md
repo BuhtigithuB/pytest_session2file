@@ -39,9 +39,9 @@ provided that look like this :
 
 **TODO:** Write test
 
-Inspire by _pytest.pastebin
+**Inspire by:** _pytest.pastebin
 
-Ref: https://github.com/pytest-dev/pytest/blob/master/_pytest/pastebin.py
+**Ref:** https://github.com/pytest-dev/pytest/blob/master/_pytest/pastebin.py
 
 
 
