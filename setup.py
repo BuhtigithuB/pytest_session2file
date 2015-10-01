@@ -17,7 +17,7 @@ setup(
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
     packages=['pytest_session_to_file'],
     description='pytest-session_to_file is a py.test plugin for capturing and saving to file the stdout of py.test.',
-    long_description=read('README'),
+    long_description=read('README.md'),
     url="https://pypi.python.org/pypi/pytest-session_to_file",
     # the following makes a plugin available to py.test
     entry_points={'pytest11': ['pytest_session_to_file = pytest_session_to_file.pytest_session_to_file']},
