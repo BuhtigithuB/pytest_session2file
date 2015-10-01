@@ -18,6 +18,7 @@ setup(
     packages=['pytest_session_to_file'],
     description='pytest-session_to_file is a py.test plugin for capturing and saving to file the stdout of py.test.',
     long_description=read('README'),
+    url="https://pypi.python.org/pypi/pytest-session_to_file",
     # the following makes a plugin available to py.test
     entry_points={'pytest11': ['pytest_session_to_file = pytest_session_to_file.pytest_session_to_file']},
     keywords='py.test pytest plugin plugins',
