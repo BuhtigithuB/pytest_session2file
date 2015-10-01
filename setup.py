@@ -11,7 +11,7 @@ def read(fname):
 
 setup(
     name="pytest-session_to_file",
-    version='0.1.0',
+    version='0.1.1',
     author='Richard Vézina',
     author_email='ml.richard.vezina@gmail.com',
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
