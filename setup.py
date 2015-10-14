@@ -4,23 +4,26 @@
 import os
 from setuptools import setup
 
+description='pytest-session2file (aka: pytest-session_to_file for v0.1.0 - v0.1.2) is a py.test plugin for capturing ' \
+            'and saving to file the stdout of py.test.'
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
+long_description = description
+if os.path.exists('README.md'):
+    long_description = open('README.md').read()
 
 setup(
-    name="pytest-session_to_file",
-    version='0.1.1',
+    name="pytest-session2file",
+    version='0.1.5',
     author='Richard Vézina',
     author_email='ml.richard.vezina@gmail.com',
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
     packages=[],
-    description='pytest-session_to_file is a py.test plugin for capturing and saving to file the stdout of py.test.',
-    long_description=read('README.md'),
-    url="https://pypi.python.org/pypi/pytest-session_to_file",
+    py_modules=['pytest_session2file.pytest_session2file'],
+    description=description,
+    long_description=long_description,
+    url="https://github.com/BuhtigithuB/pytest-session2file",
     # the following makes a plugin available to py.test
-    entry_points={'pytest11': ['pytest-session_to_file = pytest_session_to_file']},
+    entry_points={'pytest11': ['pytest_session2file = pytest_session2file.pytest_session2file']},
     keywords='py.test pytest plugin plugins',
     install_requires=['pytest'],
     classifiers=[

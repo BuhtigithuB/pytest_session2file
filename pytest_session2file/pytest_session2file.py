@@ -9,20 +9,20 @@ It put in a file exactly what pytest return to the stdout.
 To use it :
 Put this file in the root of tests/ edit your conftest and insert in the top of the file :
 
-    pytest_plugins = 'pytest_session_to_file'
+    pytest_plugins = 'pytest_session2file'
 
-Then you can launch your test with the new option --session_to_file= like this :
+Then you can launch your test with the new option --session2file= like this :
 
-    py.test --session_to_file=FILENAME
+    py.test --session2file=FILENAME
 Or :
-    py.test -p pytest_session_to_file --session_to_file=FILENAME
+    py.test -p pytest_session2file --session2file=FILENAME
 
 
 Inspire by _pytest.pastebin
 Ref: https://github.com/pytest-dev/pytest/blob/master/_pytest/pastebin.py
 
-Version : 0.1.0
-Date : 30 sept. 2015 11:25
+Version : 0.1.5
+Date : 2015-10-13 23:20:24 
 Copyright (C) 2015 Richard Vézina <ml.richard.vezinar @ gmail.com>
 License: LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
 """
@@ -34,7 +34,7 @@ import tempfile
 
 def pytest_addoption(parser):
     group = parser.getgroup("terminal reporting")
-    group._addoption('--session_to_file', action='store', metavar='path', default='pytest_session.txt',
+    group._addoption('--session2file', action='store', metavar='path', default='pytest_session.txt',
                      help="Save to file the pytest session information")
 
 
@@ -74,10 +74,7 @@ def create_new_file(config, contents):
     :contents: paste contents
     :returns: url to the pasted contents
     """
-    # import _pytest.config
-    # path = _pytest.config.option.session_to_file
-    # path = 'pytest_session.txt'
-    path = config.option.session_to_file
+    path = config.option.session2file
     with open(path, 'w') as f:
         f.writelines(contents)
 
