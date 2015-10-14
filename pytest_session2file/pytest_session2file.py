@@ -71,25 +71,9 @@ def pytest_unconfigure(config):
 def create_new_file(config, contents):
     """
     Creates a new file with pytest session contents.
-    :contents: paste contents
-    :returns: url to the pasted contents
+    :contents: pytest stdout contents
     """
     path = config.option.session2file
     with open(path, 'w') as f:
         f.writelines(contents)
 
-
-def pytest_terminal_summary(terminalreporter):
-    import _pytest.config
-    tr = terminalreporter
-    if 'failed' in tr.stats:
-        for rep in terminalreporter.stats.get('failed'):
-            try:
-                msg = rep.longrepr.reprtraceback.reprentries[-1].reprfileloc
-            except AttributeError:
-                msg = tr._getfailureheadline(rep)
-            tw = _pytest.config.create_terminal_writer(terminalreporter.config, stringio=True)
-            rep.toterminal(tw)
-            s = tw.stringio.getvalue()
-            assert len(s)
-            create_new_file(config=_pytest.config, contents=s)
