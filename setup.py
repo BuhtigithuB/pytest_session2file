@@ -13,7 +13,7 @@ if os.path.exists('README.md'):
 
 setup(
     name="pytest-session2file",
-    version='0.1.5',
+    version='0.1.6',
     author='Richard Vézina',
     author_email='ml.richard.vezina@gmail.com',
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
@@ -21,7 +21,7 @@ setup(
     py_modules=['pytest_session2file.pytest_session2file'],
     description=description,
     long_description=long_description,
-    url="https://github.com/BuhtigithuB/pytest-session2file",
+    url="https://github.com/BuhtigithuB/pytest_session2file",
     # the following makes a plugin available to py.test
     entry_points={'pytest11': ['pytest_session2file = pytest_session2file.pytest_session2file']},
     keywords='py.test pytest plugin plugins',

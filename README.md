@@ -48,9 +48,9 @@ provided that look like this :
 
 **Platforms:** All
 
-**Version:** 0.1.5
+**Version:** 0.1.6
 
-**Date:** 2015-10-13 23:20:24
+**Date:** 2015-10-13 23:44:17
 
 **License:** LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
 
