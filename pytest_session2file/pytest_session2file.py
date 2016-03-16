@@ -21,8 +21,8 @@ Or :
 Inspire by _pytest.pastebin
 Ref: https://github.com/pytest-dev/pytest/blob/master/_pytest/pastebin.py
 
-Version : 0.1.8
-Date : 2015-10-14 11:54:22  
+Version : 0.1.9
+Date : 2016-03-16 12:35:41
 Copyright (C) 2015 Richard Vézina <ml.richard.vezinar @ gmail.com>
 License: LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
 """

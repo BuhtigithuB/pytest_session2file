@@ -13,7 +13,7 @@ if os.path.exists('README.md'):
 
 setup(
     name="pytest-session2file",
-    version='0.1.8',
+    version='0.1.9',
     author='Richard Vézina',
     author_email='ml.richard.vezina@gmail.com',
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
