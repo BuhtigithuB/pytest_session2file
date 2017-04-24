@@ -50,7 +50,10 @@ def pytest_configure(config):
 
         def tee_write(s, **kwargs):
             oldwrite(s, **kwargs)
-            config._pytestsessionfile.write(s.encode('utf8'))
+            if (sys.version_info > (3, 0)):
+                config._pytestsessionfile.write(s)
+            else:
+                config._pytestsessionfile.write(s.encode('utf8'))
         tr._tw.write = tee_write
 
 
