@@ -34,7 +34,7 @@ import tempfile
 
 def pytest_addoption(parser):
     group = parser.getgroup("terminal reporting")
-    group._addoption('--session2file', action='store', metavar='path', default='pytest_session.txt',
+    group._addoption('--session2file', action='store', metavar='path', default=None,
                      help="Save to file the pytest session information")
 
 
