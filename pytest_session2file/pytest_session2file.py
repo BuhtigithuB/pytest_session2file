@@ -77,6 +77,8 @@ def create_new_file(config, contents):
     :contents: pytest stdout contents
     """
     path = config.option.session2file
+    if path is None:
+        return
     with open(path, 'w') as f:
         f.writelines(contents)
 
