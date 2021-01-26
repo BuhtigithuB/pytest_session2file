@@ -36,6 +36,7 @@ def pytest_addoption(parser):
     group = parser.getgroup("terminal reporting")
     group._addoption('--session2file', action='store', metavar='path', default=None,
                      help="Save to file the pytest session information")
+    return
 
 
 @pytest.hookimpl(trylast=True)
@@ -55,6 +56,7 @@ def pytest_configure(config):
             else:
                 config._pytestsessionfile.write(s.encode('utf8'))
         tr._tw.write = tee_write
+    return
 
 
 def pytest_unconfigure(config):
@@ -69,6 +71,7 @@ def pytest_unconfigure(config):
         del tr._tw.__dict__['write']
         # write summary
         create_new_file(config=config, contents=sessionlog)
+    return
 
 
 def create_new_file(config, contents):
@@ -77,6 +80,8 @@ def create_new_file(config, contents):
     :contents: pytest stdout contents
     """
     path = config.option.session2file
-    with open(path, 'w') as f:
-        f.writelines(contents)
+    if path is not None:
+        with open(path, 'w') as f:
+            f.writelines(contents)
+    return
 
