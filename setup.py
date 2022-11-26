@@ -13,9 +13,11 @@ if os.path.exists('README.md'):
 
 setup(
     name="pytest-session2file",
-    version='0.1.11',
+    version='0.1.12',
     author='Richard Vézina',
     author_email='ml.richard.vezina@gmail.com',
+    maintainer='Harel Keres',
+    maintainer_email='keresh3@gmail.com',
     license='LGPLv3 (http://www.gnu.org/licenses/lgpl.html)',
     packages=[],
     py_modules=['pytest_session2file.pytest_session2file'],
@@ -40,5 +42,6 @@ setup(
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.10'
     ],
 )
