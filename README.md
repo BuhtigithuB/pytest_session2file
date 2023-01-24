@@ -7,7 +7,7 @@ invoked as at command line when launching py.test run. It put in a file exactly 
 **Installation**
 
 
-Install it with pip as follow :
+Install it with pip as follows :
 
     pip install pytest-session2file
 
@@ -23,7 +23,7 @@ Then you can launch your test with the new option `--session2file=` like this :
 
     py.test --session2file=FILENAME
 
-If you don't want to edit your `conftest.py` you can invoque py.test like this :
+If you don't want to edit your `conftest.py` you can invoke py.test like this :
 
     py.test -p pytest_session2file --session2file=FILENAME
 
