@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-Pytest Plugin that save failure or test session information to a file pass as a command line argument to pytest.
+Pytest Plugin that saves failures or test session information to a file pass as a command line argument to pytest.
 
-It put in a file exactly what pytest return to the stdout, depends on the flad provided.
+It put in a file exactly what pytest return to the stdout, depends on the flag provided.
 
 To use it :
 Put this file in the root of tests/ edit your conftest and insert in the top of the file :
@@ -14,10 +14,7 @@ Put this file in the root of tests/ edit your conftest and insert in the top of 
 Then you can launch your test with one of the two options as follows:
 
     py.test --session2file=FILENAME
-    py.test --failure2file=FILENAME
-    py.test --session2file=FILENAME --failure2file=FILENAME
-
-* In case both paths provided, the plugin will store the entire pytest session.
+    py.test --session2file=FILENAME --failures-only
 
 Inspire by _pytest.pastebin
 Ref: https://github.com/pytest-dev/pytest/blob/master/_pytest/pastebin.py
@@ -41,7 +38,7 @@ def pytest_addoption(parser):
     group = parser.getgroup("terminal reporting")
     group._addoption('--session2file', action='store', metavar='path', default=None,
                      help="Save to file the pytest session information")
-    group._addoption('--failure2file', action='store', metavar='path', default=None,
+    group._addoption('--failures-only', action='store_true', default=False,
                      help="Save to file only failed tests from pytest session")
 
 
@@ -84,15 +81,17 @@ def create_new_file(config, contents):
     :contents: pytest stdout contents
     """
     path=config.option.session2file
-    failure_path=config.option.failure2file
-    # handle failed tests only
-    if failure_path is not None:
-        with open(failure_path, 'w') as f:
-            failure_pattern = re.compile(FAILURES_PATTERN)
-            m_obj=re.search(failure_pattern, contents)
-            if m_obj is not None:
-                f.writelines(contents[m_obj.start():])
-    # handle all tests
+    only_failures=config.option.failures_only
+
+    # keep full session information as default
+    session2file_content = contents
     if path is not None:
         with open(path, 'w') as f:
-            f.writelines(contents)
+            # handle failed tests only
+            if only_failures:
+                failure_pattern = re.compile(FAILURES_PATTERN)
+                m_obj=re.search(failure_pattern, contents)
+                if m_obj is not None:
+                    session2file_content=contents[m_obj.start():]
+            # write chosen information
+            f.writelines(session2file_content)

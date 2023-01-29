@@ -4,8 +4,8 @@
 import os
 from setuptools import setup
 
-description='pytest-session2file (aka: pytest-session_to_file for v0.1.0 - v0.1.2) is a py.test plugin for capturing ' \
-            'and saving to file the stdout of py.test.'
+description = 'pytest-session2file (aka: pytest-session_to_file for v0.1.0 - v0.1.2) is a py.test plugin for ' \
+              'capturing and saving to file the stdout of py.test.'
 
 long_description = description
 if os.path.exists('README.md'):
